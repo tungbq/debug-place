@@ -19,8 +19,8 @@ jobs:
       uses: anchore/sbom-action@v0.12.0
       with:
          artifact-name: test-spdx.json
-         # upload-artifact: false
-         # upload-release-assets: false
+         upload-artifact: false
+         upload-release-assets: false
          output-file: dist/test-spdx.json
     - name: Checking
       run: ls -la; pwd; ls -la dist
