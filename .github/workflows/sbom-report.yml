@@ -1,8 +1,7 @@
 name: syft-sbom-ci
 
 on:
-  release:
-    types: [published]
+  push:
 
 jobs:
   syft-sbom:
@@ -17,3 +16,8 @@ jobs:
       uses: anchore/sbom-action@v0.12.0
       with:
          artifact-name: ${{ github.event.repository.name }}-spdx.json
+         upload-artifact: false
+         upload-release-assets: false
+         output-file: dist
+    - name: Checking
+      run: ls -la; pwd
