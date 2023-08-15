@@ -7,7 +7,8 @@ jobs:
   syft-sbom:
 
     runs-on: ubuntu-latest
-
+    env:
+      VERSION: "v1.2.3"
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -18,8 +19,8 @@ jobs:
     - name: Anchore SBOM Action
       uses: anchore/sbom-action@v0.12.0
       with:
-         artifact-name: test-spdx.json
-         upload-release-assets: false
-         output-file: dist/test-spdx.json
+        artifact-name: "k6-${VERSION}-spdx.json"
+        upload-release-assets: false
+        output-file: "dist/k6-${VERSION}-spdx.json"
     - name: Checking
       run: ls -la; pwd; ls -la dist
