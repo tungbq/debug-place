@@ -18,6 +18,6 @@ jobs:
          artifact-name: test-spdx.json
          # upload-artifact: false
          # upload-release-assets: false
-         output-file: test-spdx.json
+         output-file: dist/test-spdx.json
     - name: Checking
-      run: ls -la; pwd
+      run: ls -la; pwd; ls -la dist
