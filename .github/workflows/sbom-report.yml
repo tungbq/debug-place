@@ -19,8 +19,5 @@ jobs:
          # upload-artifact: false
          # upload-release-assets: false
          output-file: test-spdx.json
-    - uses: anchore/sbom-action/publish-sbom@v0
-      with:
-        sbom-artifact-match: ".*\\.json$"
     - name: Checking
       run: ls -la; pwd
