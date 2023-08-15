@@ -15,10 +15,10 @@ jobs:
     - name: Anchore SBOM Action
       uses: anchore/sbom-action@v0.12.0
       with:
-         artifact-name: ${{ github.event.repository.name }}-spdx.json
-         upload-artifact: false
-         upload-release-assets: false
-         output-file: dist/${{ github.event.repository.name }}-spdx.json
+         artifact-name: test-spdx.json
+         # upload-artifact: false
+         # upload-release-assets: false
+         output-file: test-spdx.json
     - uses: anchore/sbom-action/publish-sbom@v0
       with:
         sbom-artifact-match: ".*\\.json$"
