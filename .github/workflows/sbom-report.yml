@@ -18,6 +18,6 @@ jobs:
          artifact-name: ${{ github.event.repository.name }}-spdx.json
          upload-artifact: false
          upload-release-assets: false
-         output-file: dist
+         output-file: dist/${{ github.event.repository.name }}-spdx.json
     - name: Checking
       run: ls -la; pwd
