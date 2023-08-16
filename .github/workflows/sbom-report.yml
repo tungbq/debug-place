@@ -20,9 +20,8 @@ jobs:
       continue-on-error: true
       uses: anchore/sbom-action@v0.12.0
       with:
-        invalid_failed
         artifact-name: k6-${{ env.VERSION }}-spdx.json
-        upload-release-assets: false
+        upload-release-assets: false1
         output-file: dist/k6-${{ env.VERSION }}-spdx.json
     - name: Checking
       run: ls -la; pwd; ls -la dist
